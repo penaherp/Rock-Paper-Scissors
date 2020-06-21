@@ -14,13 +14,13 @@ body {
 }
 
 .selection {
-    font-size: 5rem;
+    font-size: 6rem;
     border: none;
     background: none;
     outline: none;
     cursor: pointer;
     transition: 100ms;
-    padding: 3rem;
+    padding: 1rem;
 }
 
 .selection:hover {
@@ -48,6 +48,21 @@ body {
 
 .result-selection.winner {
     opacity: 1;
+    font-size: 4rem;
+}
+
+.results-message {
+    text-align: center;
+    font-size: 3rem;
+    color: #333;
+}
+
+.results-message.winner {
+    color: #00cc66;
+}
+
+.results-message.loser {
+    color: #cc0000;
 }
 
 .header {
@@ -56,7 +71,7 @@ body {
 }
 
 .title {
-    font-size: 5rem;
+    font-size: 4rem;
 }
 
 .subtitle {

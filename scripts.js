@@ -2,20 +2,29 @@ const selectionButtons = document.querySelectorAll("[data-selection]");
 const computerResultsColumn = document.querySelector("[data-computer-column]");
 const userScore = document.querySelector("[data-user-score]");
 const compScore = document.querySelector("[data-computer-score]");
+const message = document.querySelector("[data-results-message]");
 
 const SELECTIONS = [
     {
         name: "rock",
         emoji: "👊",
-        beats: "scissors"
+        beats: ["scissors","lizard"]
     },{
         name: "paper",
         emoji: "✋",
-        beats: "rock"
+        beats: ["rock","spock"]
     },{
         name: "scissors",
         emoji: "✌️",
-        beats: "paper"
+        beats: ["paper","lizard"]
+    },{
+        name: "lizard",
+        emoji: "🦎",
+        beats: ["paper","spock"]
+    },{
+        name: "spock",
+        emoji: "🖖🏼",
+        beats: ["rock","scissors"]
     }
 ];
 
@@ -39,7 +48,19 @@ function makeSelection(selection) {
 
     if(userWinner) {
         userScore.innerText = parseInt(userScore.innerText) + 1;
-    } else compScore.innerText = parseInt(compScore.innerText) + 1;
+        message.innerText = "Congratulations! You win!";
+        message.classList.remove("loser");
+        message.classList.add("winner");
+    } else if(compWinner) {
+        compScore.innerText = parseInt(compScore.innerText) + 1;
+        message.innerText = "Dang! You'll get 'em next time!";
+        message.classList.add("loser");
+        message.classList.remove("winner");
+    } else {
+        message.innerText = "It's a draw!";
+        message.classList.remove("winner");
+        message.classList.remove("loser");
+    }
 }
 
 function randomSelection() {
@@ -48,7 +69,7 @@ function randomSelection() {
 }
 
 function isWinner (selection, opposingSelection) {
-    return selection.beats === opposingSelection.name;
+    return selection.beats.includes(opposingSelection.name);
 }
 
 function addSelectionResult(selection, winner) {
