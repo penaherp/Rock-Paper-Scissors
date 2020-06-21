@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'Salesforce';
+    src:  url('fonts/aller/Aller_Bd.ttf') format('truetype')
+  }
+
+body {
+    background-color: #ccc;
+    font-family: Salesforce;
+}
+
+.selections {
+    display: flex;
+    justify-content: center;
+}
+
+.selection {
+    font-size: 5rem;
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    transition: 100ms;
+    padding: 3rem;
+}
+
+.selection:hover {
+    transform: scale(1.4);
+}
+
+.results {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    font-size: 3rem;
+}
+
+.result-score {
+    margin-left: .5rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.result-selection {
+    opacity: .5;
+}
+
+.result-selection.winner {
+    opacity: 1;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 5rem;
+}
+
+.subtitle {
+    font-size: 2rem;
+}

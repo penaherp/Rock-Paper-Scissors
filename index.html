@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="scripts.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="title">Rock, Paper, Scissors!</div>
+        <div class="subtitle">Do you have what it takes to beat the computer?</div>
+    </div>
+    <div class="selections">
+        <button class="selection" data-selection="rock">👊</button>
+        <button class="selection" data-selection="paper">✋</button>
+        <button class="selection" data-selection="scissors">✌️</button>
+    </div>
+    <div class="results">
+        <div>
+            You
+            <span class="result-score" data-user-score>0</span>
+        </div>
+        <div data-computer-column>
+            Computer
+            <span class="result-score" data-computer-score>0</span>
+        </div>
+        <!--
+        <div class="result-selection winner">👊</div>
+        <div class="result-selection">✌️</div>
+        -->
+    </div>
+</body>
+</html>
